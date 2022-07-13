@@ -1,5 +1,4 @@
-FROM node
-WORKDIR /app
-#COPY package.json /app
-#RUN npm install
-#COPY . .
+FROM openjdk:11
+ADD target/final-build.jar final-build.jar
+#EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "final-build.jar"]
